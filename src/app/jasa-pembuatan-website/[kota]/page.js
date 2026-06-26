@@ -1,4 +1,5 @@
 import KotaPage from '@/app/[slug]/index';
+import { siteConfig } from '@/lib/siteConfig';
 
 function formatKota(slug) {
   return slug
@@ -10,13 +11,19 @@ function formatKota(slug) {
 export async function generateMetadata({ params }) {
   const { kota } = params;
   const kotaDisplay = formatKota(kota);
+  const title = `Jasa Pembuatan Website ${kotaDisplay} | ZRDigitalTech`;
+  const description = `Butuh jasa pembuatan website profesional di ${kotaDisplay}? ZRDigitalTech siap bantu wujudkan website bisnis yang menarik, cepat, dan SEO friendly. Gratis revisi & bayar setelah jadi!`;
+  const url = `${process.env.SITE_URL}/jasa-pembuatan-website/${kota}`;
 
   return {
-    title: `Jasa Pembuatan Website ${kotaDisplay} | ZRDigitalTech`,
-    description: `Butuh jasa pembuatan website profesional di ${kotaDisplay}? ZRDigitalTech siap bantu wujudkan website bisnis yang menarik, cepat, dan SEO friendly. Gratis revisi & bayar setelah jadi!`,
+    title,
+    description,
     openGraph: {
-      url: `${process.env.SITE_URL}/jasa-pembuatan-website/${kota}`,
+      url,
       images: [`${process.env.SITE_URL}/assets/images/meta-zrdigitaltech.webp`]
+    },
+    alternates: {
+      canonical: url
     }
   };
 }
@@ -24,7 +31,62 @@ export async function generateMetadata({ params }) {
 export default function Page({ params }) {
   const { kota } = params;
   const kotaDisplay = formatKota(kota);
-  return <KotaPage kota={kotaDisplay} />;
+  const canonical = `${process.env.SITE_URL}/jasa-pembuatan-website/${kota}`;
+
+  // JSON-LD for Breadcrumb + LocalBusiness
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: process.env.SITE_URL
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Jasa Pembuatan Website',
+            item: `${process.env.SITE_URL}/jasa-pembuatan-website`
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: kotaDisplay,
+            item: canonical
+          }
+        ]
+      },
+      {
+        '@type': 'LocalBusiness',
+        name: siteConfig.name,
+        url: siteConfig.url,
+        telephone: siteConfig.telephone,
+        email: siteConfig.email,
+        sameAs: siteConfig.sameAs,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: kotaDisplay,
+          addressRegion: siteConfig.address.addressRegion,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: siteConfig.address.addressCountry
+        },
+        logo: siteConfig.logo,
+        openingHours: siteConfig.openingHours
+      }
+    ]
+  };
+
+  return (
+    <>
+      <KotaPage kota={kotaDisplay} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

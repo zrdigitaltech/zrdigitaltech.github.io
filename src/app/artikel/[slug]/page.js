@@ -1,5 +1,6 @@
 import DataLatestNews from '@/redux/action/latest-news/data-latest-news.json';
 import Page from '@/app/page';
+import Head from 'next/head';
 
 async function fetchSlugs() {
   const slugs = DataLatestNews.map((item) => item?.slug);
@@ -30,7 +31,82 @@ export async function generateMetadata({ params }) {
 const LatestNews = ({ params }) => {
   const { slug } = params;
 
-  return <Page slug={slug} />;
+  const data = DataLatestNews.find((item) => item.slug === slug) || {};
+
+  const articleUrl = `${process.env.SITE_URL}/artikel/${slug}`;
+
+  function parseDateToISO(dateStr) {
+    if (!dateStr) return undefined;
+    // try native parse first
+    let d = new Date(dateStr);
+    if (!isNaN(d.getTime())) return d.toISOString();
+
+    // map Indonesian month names to English
+    const map = {
+      Januari: 'January',
+      Februari: 'February',
+      Maret: 'March',
+      April: 'April',
+      Mei: 'May',
+      Juni: 'June',
+      Juli: 'July',
+      Agustus: 'August',
+      September: 'September',
+      Oktober: 'October',
+      November: 'November',
+      Desember: 'December'
+    };
+
+    let replaced = dateStr;
+    Object.keys(map).forEach((id) => {
+      const re = new RegExp(id, 'gi');
+      replaced = replaced.replace(re, map[id]);
+    });
+
+    d = new Date(replaced);
+    if (!isNaN(d.getTime())) return d.toISOString();
+    return undefined;
+  }
+
+  const datePublishedISO = parseDateToISO(data.date);
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleUrl
+    },
+    headline: data.title || '',
+    image: data.image ? [`${process.env.SITE_URL}${data.image}`] : [],
+    datePublished: datePublishedISO,
+    description: data.meta_description || data.description?.replace(/<[^>]+>/g, '').slice(0, 200) || '',
+    author: {
+      '@type': 'Person',
+      name: data.author || 'ZRDigitalTech'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ZRDigitalTech',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${process.env.SITE_URL}/assets/images/512x512.png`
+      }
+    }
+  };
+
+  return (
+    <>
+      <Head>
+        <link rel="canonical" href={articleUrl} />
+      </Head>
+      <Page slug={slug} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+    </>
+  );
 };
 
 export default LatestNews;

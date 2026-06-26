@@ -51,16 +51,17 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <Heads
         title={metadata.title}
         description={metadata.description}
         author={metadata.author}
         keywords={metadata.keywords}
-        themecolor={viewport.themeColor}
+        themeColor={viewport.themeColor}
         manifest={metadata.manifest}
         url={metadata.openGraph.url}
         image={metadata.openGraph.images}
+        canonical={process.env.SITE_URL}
       />
       <body>
         <ReduxProvider>
