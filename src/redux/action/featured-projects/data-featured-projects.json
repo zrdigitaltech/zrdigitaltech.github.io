@@ -70,5 +70,33 @@
     "description": "Jual Makanan Ringan",
     "launch_website": "https://ZRDigitalTech.github.io/berkah-ramadhan",
     "service": "Pembuatan Website"
+  },
+  {
+    "id": 7,
+    "filter": "a1",
+    "category": "Website",
+    "title": "Bengkel Las EKI Jaya",
+    "fullpage": "https://placehold.co/2782x4382?text=www.ekijaya.com",
+    "banner": "https://placehold.co/390x300?text=www.ekijaya.com",
+    "carousel_images": [
+      "https://placehold.co/2782x4382?text=www.ekijaya.com"
+    ],
+    "description": "<p>Bengkel Las EKI Jaya penyedia jasa bengkel las profesional yang melayani pembuatan kanopi, pagar, teralis, railing tangga, balkon, dan berbagai konstruksi besi dengan desain modern, responsif, dan SEO friendly.</p>",
+    "launch_website": "https://www.ekijaya.com",
+    "service": "Pembuatan Website"
+  },
+  {
+    "id": 8,
+    "filter": "a1",
+    "category": "Website",
+    "title": "Bengkel Las Doa Ibu 99",
+    "fullpage": "https://placehold.co/2782x4382?text=www.bengkellasdoaibu99.com",
+    "banner": "https://placehold.co/390x300?text=www.bengkellasdoaibu99.com",
+    "carousel_images": [
+      "https://placehold.co/2782x4382?text=www.bengkellasdoaibu99.com"
+    ],
+    "description": "<p>Bengkel Las Doa Ibu 99 menyediakan layanan pembuatan kanopi, pagar, teralis, balkon, railing tangga, dan berbagai kebutuhan konstruksi besi dengan pengerjaan profesional dan bergaransi.</p>",
+    "launch_website": "https://www.bengkellasdoaibu99.com",
+    "service": "Pembuatan Website"
   }
 ]
