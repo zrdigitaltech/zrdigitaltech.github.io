@@ -13,18 +13,19 @@ export async function generateMetadata({ params }) {
   const kotaDisplay = formatKota(kota);
   const title = `Jasa Pembuatan Website ${kotaDisplay} | ZRDigitalTech`;
   const description = `Butuh jasa pembuatan website profesional di ${kotaDisplay}? ZRDigitalTech siap bantu wujudkan website bisnis yang menarik, cepat, dan SEO friendly. Gratis revisi & bayar setelah jadi!`;
-  const url = `${process.env.SITE_URL}/jasa-pembuatan-website/${kota}`;
+  const url = `${process.env.SITE_URL || siteConfig.url}/jasa-pembuatan-website/${kota}`;
 
   return {
     title,
     description,
     openGraph: {
       url,
-      images: [`${process.env.SITE_URL}/assets/images/meta-zrdigitaltech.webp`]
+      images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`]
     },
     alternates: {
       canonical: url
-    }
+    },
+    robots: { index: true, follow: true }
   };
 }
 
