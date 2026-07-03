@@ -63,14 +63,8 @@ const Index = (props) => {
 
         {/* Basic metas */}
         <meta name="robots" content="index,follow" />
-        {/* Emit canonical only when explicitly provided or when `url` is a full URL different from site base */}
-        {canonProp ? (
-          <link rel="canonical" href={siteUrl} />
-        ) : (
-          urlProp && isFull(urlProp) && siteUrl.replace(/\/$/, '') !== normalizedSiteBase ? (
-            <link rel="canonical" href={siteUrl} />
-          ) : null
-        )}
+        {/* Emit canonical when explicitly provided or when `url` prop exists (full URL or path). */}
+        {canonProp || urlProp ? <link rel="canonical" href={siteUrl} /> : null}
         <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
         <meta name="description" content={description} />
