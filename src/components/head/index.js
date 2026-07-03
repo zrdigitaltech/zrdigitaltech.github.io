@@ -29,6 +29,8 @@ const Index = (props) => {
       siteUrl = siteBase;
     }
 
+    const normalizedSiteBase = siteBase.replace(/\/$/, '');
+
     const orgId = siteUrl ? `${siteUrl}#organization` : undefined;
 
   const jsonLd = {
@@ -60,14 +62,21 @@ const Index = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Basic metas */}
+        <meta name="robots" content="index,follow" />
+        {/* Emit canonical only when explicitly provided or when `url` is a full URL different from site base */}
+        {canonProp ? (
+          <link rel="canonical" href={siteUrl} />
+        ) : (
+          urlProp && isFull(urlProp) && siteUrl.replace(/\/$/, '') !== normalizedSiteBase ? (
+            <link rel="canonical" href={siteUrl} />
+          ) : null
+        )}
+        <meta name="theme-color" content={themeColor} />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
         <meta name="description" content={description} />
         <meta name="author" content={author} />
         <meta name="keywords" content={keywordsContent} />
-        <meta name="theme-color" content={themeColor} />
-        <meta name="robots" content="index,follow" />
-          {siteUrl && <link rel="canonical" href={siteUrl} />}
         <link rel="manifest" href={manifest} />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
 
         {/* Facebook Open Graph */}
         <meta property="og:title" content={title} />

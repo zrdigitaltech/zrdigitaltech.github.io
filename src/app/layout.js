@@ -62,7 +62,6 @@ export default function RootLayout({ children }) {
         manifest={metadata.manifest}
         url={metadata.openGraph.url}
         image={metadata.openGraph.images}
-        canonical={process.env.SITE_URL || siteConfig.url}
       />
       <body>
         <ReduxProvider>
