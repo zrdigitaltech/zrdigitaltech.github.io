@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://zrdigitaltech.com
 
 # Sitemaps
 Sitemap: https://zrdigitaltech.com/sitemap.xml
