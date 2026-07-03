@@ -7,11 +7,13 @@ const Index = () => {
     <>
       <Head>
         <meta name="robots" content="noindex, nofollow" />
+        <title>404 - Halaman Tidak Ditemukan</title>
       </Head>
+
       <div style={{ textAlign: 'center', padding: '50px' }}>
-        <h1>404 - Page Not Found</h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
-        <a href="/">Go back to the homepage</a>
+        <h1>404 - Halaman Tidak Ditemukan</h1>
+        <p>Maaf, halaman yang Anda cari tidak tersedia atau mungkin telah dipindahkan.</p>
+        <a href="/">Kembali ke Beranda</a>
       </div>
     </>
   );
