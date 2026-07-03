@@ -1,3 +1,9 @@
 RewriteEngine On
+
+# Redirect URL lama ke format baru
+RewriteRule ^jasa-pembuatan-website-(.+)/?$ /jasa-pembuatan-website/$1/ [R=301,L]
+
+# Tambahkan trailing slash untuk URL lainnya
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]

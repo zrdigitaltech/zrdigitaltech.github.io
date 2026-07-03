@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'ZRDigitalTech',
   description: 'Jasa Pembuatan Website profesional — desain, development, SEO.',
-  url: process.env.SITE_URL || 'https://example.com',
+  url: process.env.SITE_URL || 'https://zrdigitaltech.com',
   logo: '/assets/images/512x512.png',
   telephone: '+62-812-2888-3616',
   email: 'info@zrdigitaltech.com',

@@ -20,6 +20,17 @@ const nextConfig = {
   env: {
     SITE_URL: process.env.SITE_URL
   }
+  ,
+  async redirects() {
+    return [
+      // Redirect /jasa-pembuatan-website-tangerang -> /jasa-pembuatan-website/tangerang
+      {
+        source: '/jasa-pembuatan-website-:kota',
+        destination: '/jasa-pembuatan-website/:kota',
+        permanent: true
+      },
+    ];
+  }
 };
 
 export default nextConfig;

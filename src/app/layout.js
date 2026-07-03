@@ -16,6 +16,7 @@ import '@/assets/styles/styles.scss';
 // layout.js
 // Components
 import Heads from '@/components/head';
+import { siteConfig } from '@/lib/siteConfig';
 import Scripts from '@/components/scripts';
 import Loading from '@/components/loading';
 const ReduxProvider = dynamic(() => import('@/redux/provider'), {
@@ -40,8 +41,8 @@ export const metadata = {
   description:
     'Penyedia pembuatan website yang akan membantu mewujudkan keinginan dan kebutuhan Anda.',
   openGraph: {
-    url: `${process.env.SITE_URL}`,
-    images: [`${process.env.SITE_URL}/assets/images/meta-zrdigitaltech.webp`] // ganti jika ada banner khusus
+    url: `${process.env.SITE_URL || siteConfig.url}`,
+    images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`] // ganti jika ada banner khusus
   }
 };
 
@@ -61,7 +62,6 @@ export default function RootLayout({ children }) {
         manifest={metadata.manifest}
         url={metadata.openGraph.url}
         image={metadata.openGraph.images}
-        canonical={process.env.SITE_URL}
       />
       <body>
         <ReduxProvider>
