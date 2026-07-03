@@ -1,6 +1,7 @@
 import DataLatestNews from '@/redux/action/latest-news/data-latest-news.json';
 import Page from '@/app/page';
 import Head from 'next/head';
+import { siteConfig } from '@/lib/siteConfig';
 
 async function fetchSlugs() {
   const slugs = DataLatestNews.map((item) => item?.slug);
@@ -22,8 +23,8 @@ export async function generateMetadata({ params }) {
     title: `${data?.title} | ZRDigitalTech`,
     description: data?.meta_description,
     openGraph: {
-      url: `${process.env.SITE_URL}/artikel/${slug}`,
-      images: `${process.env.SITE_URL}${data?.banner}`
+      url: `${process.env.SITE_URL || siteConfig.url}/artikel/${slug}`,
+      images: `${process.env.SITE_URL || siteConfig.url}${data?.banner}`
     }
   };
 }
@@ -33,7 +34,8 @@ const LatestNews = ({ params }) => {
 
   const data = DataLatestNews.find((item) => item.slug === slug) || {};
 
-  const articleUrl = `${process.env.SITE_URL}/artikel/${slug}`;
+  const base = process.env.SITE_URL || siteConfig.url || '';
+  const articleUrl = `${base.replace(/\/$/, '')}/artikel/${slug}`;
 
   function parseDateToISO(dateStr) {
     if (!dateStr) return undefined;
@@ -78,7 +80,7 @@ const LatestNews = ({ params }) => {
       '@id': articleUrl
     },
     headline: data.title || '',
-    image: data.image ? [`${process.env.SITE_URL}${data.image}`] : [],
+    image: data.image ? [`${base.replace(/\/$/, '')}${data.image}`] : [],
     datePublished: datePublishedISO,
     description: data.meta_description || data.description?.replace(/<[^>]+>/g, '').slice(0, 200) || '',
     author: {
@@ -90,7 +92,7 @@ const LatestNews = ({ params }) => {
       name: 'ZRDigitalTech',
       logo: {
         '@type': 'ImageObject',
-        url: `${process.env.SITE_URL}/assets/images/512x512.png`
+        url: `${base.replace(/\/$/, '')}/assets/images/512x512.png`
       }
     }
   };
