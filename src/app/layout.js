@@ -46,6 +46,13 @@ export const metadata = {
   }
 };
 
+// Server-rendered defaults for canonical and robots
+metadata.alternates = { canonical: `${process.env.SITE_URL || siteConfig.url}` };
+metadata.robots = {
+  index: true,
+  follow: true
+};
+
 export const viewport = {
   themeColor: '#ffffff'
 };
