@@ -28,18 +28,27 @@ export const metadata = {
   // Basic metas
   authors: [{ name: 'ZRDigitalTech' }],
   keywords: [
-    'Jasa Pembuatan Website Tangerang',
+    'Jasa Pembuatan Website',
     'Jasa Pembuatan Website Profesional',
     'Jasa Pembuatan Website Murah',
+    'Jasa Pembuatan Website Tangerang',
+    'Jasa Website',
+    'Pembuatan Website Company Profile',
+    'Pembuatan Website Toko Online',
+    'Pembuatan Landing Page',
+    'Website SEO Friendly',
+    'Website Responsive',
+    'Website Custom',
+    'Web Developer Indonesia',
     'ZRDigitalTech',
     'Zikri Ramdani'
   ],
   manifest: '/manifest.json',
   author: 'ZRDigitalTech',
   // Page Title
-  title: 'Jasa Pembuatan Website | ZRDigitalTech',
+  title: 'Jasa Pembuatan Website Profesional | ZRDigitalTech',
   description:
-    'Penyedia pembuatan website yang akan membantu mewujudkan keinginan dan kebutuhan Anda.',
+    'ZRDigitalTech menyediakan jasa pembuatan website profesional untuk perusahaan, UMKM, sekolah, instansi, toko online, landing page, dan website custom. Desain modern, responsif, SEO-friendly, serta didukung layanan maintenance dan konsultasi gratis.',
   openGraph: {
     url: `${process.env.SITE_URL || siteConfig.url}`,
     images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`] // ganti jika ada banner khusus

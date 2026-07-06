@@ -3,10 +3,10 @@ import ArtikelPage from './artikelPage';
 
 export async function generateMetadata() {
   return {
-    title: `Artikel Seputar Website & Digital Marketing | ZRDigitalTech`,
-    description: `Temukan berbagai artikel bermanfaat seputar pembuatan website, digital marketing, dan tips meningkatkan bisnis online. Dikelola oleh ZRDigitalTech — partner digital terpercaya Anda.`,
+    title: `Artikel Website, SEO & Digital Marketing | ZRDigitalTech`,
+    description: `Temukan artikel terbaru seputar pembuatan website, SEO, digital marketing, website bisnis, UMKM, landing page, toko online, serta berbagai tips untuk meningkatkan kehadiran dan penjualan bisnis Anda secara online.`,
     keywords:
-      'artikel website, artikel digital marketing, tips SEO, strategi online marketing, pembuatan website, marketing UMKM, bisnis online, konten website, jasa pembuatan website',
+      'Artikel Website,Artikel SEO,Artikel Digital Marketing,Tips Website,Pembuatan Website,Website Company Profile,Website Toko Online,Landing Page,SEO Website,Optimasi Website,Bisnis Online,Marketing Digital,UMKM,Web Developer,ZRDigitalTech',
     openGraph: {
       url: `${process.env.SITE_URL}/artikel`,
       images: [`${process.env.SITE_URL}/assets/images/featured-projects/featured-project-1.jpg`] // ganti jika ada banner khusus
