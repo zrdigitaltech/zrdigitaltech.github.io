@@ -26,6 +26,10 @@ export async function generateMetadata({ params }) {
       url: `${process.env.SITE_URL || siteConfig.url}/artikel/${slug}`,
       images: `${process.env.SITE_URL || siteConfig.url}${data?.banner}`
     }
+    ,
+    // Add server-rendered canonical and robots metadata
+    alternates: { canonical: `${process.env.SITE_URL || siteConfig.url}/artikel/${slug}` },
+    robots: { index: true, follow: true }
   };
 }
 

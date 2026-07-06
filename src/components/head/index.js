@@ -7,31 +7,29 @@ const Index = (props) => {
 
   const keywordsContent = Array.isArray(keywords) ? keywords.join(', ') : keywords || '';
   const imageUrl = Array.isArray(image) ? image[0] : image;
-    const siteBase = process.env.SITE_URL || siteConfig.url || '';
+  const siteBase = process.env.SITE_URL || siteConfig.url || '';
 
-    // Build a normalized canonical URL:
-    // - if `canonical` prop is provided, use it
-    // - else if `url` is a full URL, use it
-    // - else if `url` is a path, join with siteBase
-    // - else fall back to siteBase
-    const normalize = (u) => (u ? String(u).trim() : '');
-    const isFull = (u) => /^https?:\/\//i.test(u);
+  // Build a normalized canonical URL:
+  // - if `canonical` prop is provided, use it
+  // - else if `url` is a full URL, use it
+  // - else if `url` is a path, join with siteBase
+  // - else fall back to siteBase
+  const normalize = (u) => (u ? String(u).trim() : '');
+  const isFull = (u) => /^https?:\/\//i.test(u);
 
-    let siteUrl = '';
-    const canonProp = normalize(canonical);
-    const urlProp = normalize(url);
+  let siteUrl = '';
+  const canonProp = normalize(canonical);
+  const urlProp = normalize(url);
 
-    if (canonProp) {
-      siteUrl = canonProp;
-    } else if (urlProp) {
-      siteUrl = isFull(urlProp) ? urlProp : `${siteBase.replace(/\/$/, '')}${urlProp.startsWith('/') ? urlProp : `/${urlProp}`}`;
-    } else {
-      siteUrl = siteBase;
-    }
+  if (canonProp) {
+    siteUrl = canonProp;
+  } else if (urlProp) {
+    siteUrl = isFull(urlProp) ? urlProp : `${siteBase.replace(/\/$/, '')}${urlProp.startsWith('/') ? urlProp : `/${urlProp}`}`;
+  } else {
+    siteUrl = siteBase;
+  }
 
-    const normalizedSiteBase = siteBase.replace(/\/$/, '');
-
-    const orgId = siteUrl ? `${siteUrl}#organization` : undefined;
+  const orgId = siteUrl ? `${siteUrl}#organization` : undefined;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -63,14 +61,8 @@ const Index = (props) => {
 
         {/* Basic metas */}
         <meta name="robots" content="index,follow" />
-        {/* Emit canonical only when explicitly provided or when `url` is a full URL different from site base */}
-        {canonProp ? (
-          <link rel="canonical" href={siteUrl} />
-        ) : (
-          urlProp && isFull(urlProp) && siteUrl.replace(/\/$/, '') !== normalizedSiteBase ? (
-            <link rel="canonical" href={siteUrl} />
-          ) : null
-        )}
+        {/* Emit canonical when explicitly provided or when `url` prop exists (full URL or path). */}
+        {canonProp || urlProp ? <link rel="canonical" href={siteUrl} /> : null}
         <meta name="theme-color" content={themeColor} />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
         <meta name="description" content={description} />

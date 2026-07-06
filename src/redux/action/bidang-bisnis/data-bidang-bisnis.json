@@ -2,41 +2,49 @@
   {
     "id": 1,
     "image": "/assets/images/bidang-bisnis/company-profile.webp",
-    "title": "Web Company Profile"
+    "title": "Jasa Pembuatan Website Company Profile",
+    "description": "Website profesional untuk memperkenalkan profil perusahaan, layanan, portofolio, dan kontak bisnis."
   },
   {
     "id": 2,
     "image": "/assets/images/bidang-bisnis/goverment.webp",
-    "title": "Web Instansi & Pemerintah"
+    "title": "Jasa Pembuatan Website Instansi & Pemerintah",
+    "description": "Website resmi untuk instansi pemerintah, desa, kelurahan, sekolah negeri, dan organisasi publik."
   },
   {
     "id": 3,
     "image": "/assets/images/bidang-bisnis/online-shop.webp",
-    "title": "Web Katalog & Toko Online"
+    "title": "Jasa Pembuatan Website Katalog & Toko Online",
+    "description": "Website e-commerce dan katalog produk dengan fitur pemesanan, pembayaran, dan manajemen produk."
   },
   {
     "id": 4,
     "image": "/assets/images/bidang-bisnis/hotel.webp",
-    "title": "Web Hotel Penginapan"
+    "title": "Jasa Pembuatan Website Hotel & Penginapan",
+    "description": "Website hotel, villa, guest house, dan penginapan lengkap dengan informasi kamar dan reservasi."
   },
   {
     "id": 5,
     "image": "/assets/images/bidang-bisnis/school.webp",
-    "title": "Web Sekolah"
+    "title": "Jasa Pembuatan Website Sekolah",
+    "description": "Website sekolah, kampus, dan lembaga pendidikan untuk profil, berita, PPDB, dan informasi akademik."
   },
   {
     "id": 6,
     "image": "/assets/images/bidang-bisnis/rent-car.webp",
-    "title": "Web Wisata & Rental Mobil"
+    "title": "Jasa Pembuatan Website Wisata & Rental Mobil",
+    "description": "Website untuk travel, agen wisata, rental mobil, dan layanan transportasi dengan sistem pemesanan."
   },
   {
     "id": 7,
     "image": "/assets/images/bidang-bisnis/hospital.webp",
-    "title": "Web Klinik & Rumah Sakit"
+    "title": "Jasa Pembuatan Website Klinik & Rumah Sakit",
+    "description": "Website layanan kesehatan dengan informasi dokter, layanan medis, jadwal praktik, dan kontak."
   },
   {
     "id": 8,
     "image": "/assets/images/bidang-bisnis/UMKM.webp",
-    "title": "Web UKM & UMKM"
+    "title": "Jasa Pembuatan Website UKM & UMKM",
+    "description": "Website untuk UKM dan UMKM guna meningkatkan kredibilitas bisnis dan memperluas pemasaran secara online."
   }
 ]

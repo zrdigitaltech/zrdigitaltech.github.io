@@ -1,42 +1,67 @@
 [
   {
     "id": 1,
-    "title": "Apa Itu Website?",
-    "description": "<p class='mb-0'>Website adalah <strong>platform digital</strong> yang memudahkan Anda untuk mengeksplorasi informasi mengenai <strong>produk</strong>, <strong>jasa</strong>, dan <strong>profil perusahaan</strong>. Dapat diakses dengan mudah melalui berbagai perangkat seperti <strong>laptop</strong> dan <strong>smartphone</strong>, website berfungsi sebagai <strong>media promosi</strong> yang efektif, tempat untuk <strong>bertransaksi</strong>, memperkenalkan layanan, serta sarana untuk <strong>mendaftar siswa</strong> dan menyebarkan informasi dengan cepat.</p>"
+    "title": "Apa Itu Website dan Apa Fungsinya untuk Bisnis?",
+    "description": "<p class='mb-0'>Website adalah <strong>media digital</strong> yang dapat diakses melalui internet untuk menampilkan informasi mengenai <strong>perusahaan</strong>, <strong>produk</strong>, maupun <strong>layanan</strong>. Website dapat digunakan sebagai company profile, toko online, landing page, portal informasi, hingga sistem pemesanan. Dengan website, calon pelanggan dapat menemukan informasi bisnis Anda selama 24 jam melalui komputer, laptop, maupun smartphone.</p>"
   },
   {
     "id": 2,
-    "title": "Mengapa Harus Memiliki Website?",
-    "description": "<p class='mb-0'>Di <strong>era digital</strong> saat ini, memiliki website adalah <strong>kunci sukses</strong> untuk menarik pelanggan, terutama mereka yang tidak dapat bertatap muka langsung. Dengan website, Anda mempermudah proses <strong>pembelian</strong> dengan menyediakan <strong>informasi cepat</strong> dan <strong>mudah diakses</strong>. Selain itu, website juga membantu <strong>mengurangi biaya sewa tempat fisik</strong> dan biaya pegawai, serta menyederhanakan proses administrasi. Menariknya, sekitar <strong>80%</strong> pengunjung dan pembeli saat ini datang dari <strong>media online</strong>, termasuk website dan media sosial!</p>"
+    "title": "Mengapa Bisnis Harus Memiliki Website?",
+    "description": "<p class='mb-0'>Website membantu meningkatkan <strong>kredibilitas bisnis</strong>, memperluas jangkauan pemasaran, serta memudahkan calon pelanggan menemukan informasi mengenai produk atau layanan Anda. Selain itu, website dapat diintegrasikan dengan Google, WhatsApp, media sosial, formulir kontak, hingga sistem pembayaran sehingga proses bisnis menjadi lebih efektif dan profesional.</p>"
   },
   {
     "id": 3,
-    "title": "Kapan Waktu Yang Tepat Untuk Memiliki Website?",
-    "description": "<p class='mb-0'>Waktu yang <strong>tepat</strong> untuk memiliki website adalah saat Anda ingin <strong>mengembangkan bisnis</strong> dan <strong>menjangkau lebih banyak konsumen</strong>. Di tengah pembatasan aktivitas, website memberikan <strong>kesempatan emas</strong> bagi calon pelanggan untuk berinteraksi secara online dengan Anda. Proses pembuatan website biasanya berlangsung dalam <strong>7-14 hari</strong>, tergantung pada <strong>kebutuhan</strong> dan <strong>kompleksitas</strong> yang diperlukan. Jangan tunda lagi, segera hadirkan website Anda dan buka peluang baru!</p>"
+    "title": "Kapan Waktu yang Tepat Membuat Website?",
+    "description": "<p class='mb-0'>Waktu terbaik untuk membuat website adalah ketika Anda ingin meningkatkan kepercayaan pelanggan, memperluas pemasaran, atau mulai memasarkan produk dan layanan secara online. Semakin cepat website dibuat, semakin besar peluang bisnis Anda ditemukan oleh calon pelanggan melalui mesin pencari seperti Google.</p>"
   },
   {
     "id": 4,
-    "title": "Apa yang Mempengaruhi Harga Website?",
-    "description": "<p>Berinvestasi dalam website atau landing page memang memerlukan pertimbangan yang matang. Berikut adalah <strong>6 faktor kunci</strong> yang memengaruhi biaya:</p><ol><li><strong>Spek Pemrosesan Data (CPU)</strong>: Daya pemrosesan yang menentukan kecepatan dan kinerja website Anda.</li><li><strong>Spek Jaringan</strong>: Kualitas koneksi yang memengaruhi aksesibilitas pengunjung.</li><li><strong>Spek Penyimpanan Memori</strong>: Kapasitas penyimpanan untuk semua konten dan data penting.</li><li><strong>Desain Web dan Aset Premium</strong>: Desain yang menarik dan profesional akan menarik lebih banyak pengunjung.</li><li><strong>Fitur Interaktif</strong>: Fasilitas seperti keranjang belanja, manajemen pesanan, dan sistem keanggotaan yang meningkatkan pengalaman pengguna.</li><li><strong>Integrasi dengan Aplikasi Lain</strong>: Kemampuan untuk terhubung dengan platform seperti Facebook, TikTok, Google, dan metode pembayaran untuk memudahkan transaksi.</li></ol>"
+    "title": "Apa yang Mempengaruhi Harga Pembuatan Website?",
+    "description": "<p>Biaya pembuatan website ditentukan oleh beberapa faktor berikut:</p><ol><li><strong>Jenis website</strong>, seperti company profile, toko online, landing page, atau website custom.</li><li><strong>Jumlah halaman</strong> dan konten yang akan dibuat.</li><li><strong>Desain UI/UX</strong> yang disesuaikan dengan kebutuhan bisnis.</li><li><strong>Fitur tambahan</strong>, seperti booking online, dashboard admin, pembayaran online, atau integrasi API.</li><li><strong>Domain dan hosting</strong> yang digunakan.</li><li><strong>Optimasi SEO</strong> agar website lebih mudah ditemukan di Google.</li><li><strong>Layanan maintenance</strong> dan pengembangan lanjutan setelah website selesai.</li></ol>"
   },
   {
     "id": 5,
     "title": "Berapa Lama Proses Pembuatan Website?",
-    "description": "<p class='mb-0'>Membangun website yang menarik dan fungsional biasanya memakan waktu antara <strong>7 hingga 14 hari kerja</strong>. Durasi ini bergantung pada tingkat <strong>kompleksitas</strong> dan <strong>jenis konten</strong> yang Anda inginkan. Semakin banyak fitur dan detail yang ingin Anda masukkan, waktu pembuatan dapat disesuaikan. Kami berkomitmen untuk memberikan kualitas terbaik dalam setiap proyek, sehingga Anda dapat segera memiliki website yang siap menarik perhatian pengunjung!</p>"
+    "description": "<p class='mb-0'>Rata-rata proses pembuatan website berlangsung sekitar <strong>7 hingga 14 hari kerja</strong> untuk website standar seperti company profile atau landing page. Website dengan fitur yang lebih kompleks, seperti sistem reservasi, marketplace, atau aplikasi berbasis web, membutuhkan waktu pengerjaan yang disesuaikan dengan kebutuhan proyek.</p>"
   },
   {
     "id": 6,
-    "title": "Apa Saja Yang Harus Client Siapkan?",
-    "description": "<p>Agar proses pembuatan website berjalan lancar, <strong>client</strong> perlu menyiapkan beberapa <strong>aset penting</strong>, antara lain:</p><ul><li><strong>Aset grafis</strong>: logo, foto produk, dan foto tim.</li><li><strong>Deskripsi layanan</strong> atau produk yang ingin ditawarkan.</li><li><strong>Informasi perusahaan</strong>: sejarah, visi & misi, alamat, media sosial, email, dan nomor kontak.</li><li><strong>Portofolio</strong> yang menampilkan karya terbaik Anda.</li><li><strong>Testimoni</strong>: foto atau video yang menunjukkan kepuasan pelanggan.</li></ul><p class='mb-0'>Dengan mempersiapkan semua ini, Anda membantu kami menciptakan website yang tidak hanya <strong>menarik</strong>, tetapi juga <strong>representatif</strong> untuk bisnis Anda!</p>"
+    "title": "Apa Saja yang Harus Disiapkan Sebelum Membuat Website?",
+    "description": "<p>Untuk mempercepat proses pembuatan website, Anda dapat menyiapkan beberapa data berikut:</p><ul><li>Logo perusahaan atau bisnis.</li><li>Foto produk, layanan, kantor, atau tim.</li><li>Profil perusahaan, visi, misi, dan deskripsi layanan.</li><li>Alamat, nomor WhatsApp, email, serta media sosial.</li><li>Portofolio atau dokumentasi proyek jika tersedia.</li><li>Domain dan hosting apabila sudah dimiliki.</li></ul><p class='mb-0'>Apabila sebagian data belum tersedia, tim kami siap membantu memberikan arahan agar website tetap dapat dikembangkan dengan baik.</p>"
   },
   {
     "id": 7,
-    "title": "Apakah Bisa Direvisi?",
-    "description": "<p>Tentu saja! Kami memahami bahwa <strong>kreativitas</strong> dan <strong>perubahan</strong> adalah bagian penting dari proses desain. <strong>Revisi minor</strong> sangat kami terima untuk memastikan website Anda sesuai dengan harapan.</p><p class='mb-0'>Namun, jika Anda memiliki ide yang lebih besar atau perubahan yang bersifat mendasar, kami sarankan untuk mendiskusikannya lebih lanjut. Kami akan berusaha membantu Anda menciptakan website yang <strong>sempurna</strong> sesuai visi dan misi Anda!</p>"
+    "title": "Apakah Website Bisa Direvisi?",
+    "description": "<p class='mb-0'>Ya. Kami menyediakan revisi selama masih sesuai dengan ruang lingkup pekerjaan yang telah disepakati. Jika terdapat perubahan konsep atau penambahan fitur di luar kesepakatan awal, kami akan mendiskusikan solusi terbaik beserta estimasi pengerjaannya terlebih dahulu.</p>"
   },
   {
     "id": 8,
-    "title": "Apakah Kami Bisa Mengelola Website?",
-    "description": "<p>Absolut! Setelah kami menyelesaikan <strong>desain</strong> dan <strong>pengembangan</strong>, Anda akan diberikan <strong>akses administrator</strong> penuh. Ini artinya, Anda bisa mengelola website Anda sendiri dengan mudah dan cepat.</p><p class='mb-0'>Tambahkan <strong>artikel</strong>, buat <strong>posting</strong>, upload <strong>galeri</strong>, dan kelola semua konten lainnya dengan kebebasan penuh. Kami akan memastikan Anda merasa <strong>kuat</strong> dan <strong>mandiri</strong> dalam mengelola website Anda!</p>"
+    "title": "Apakah Saya Bisa Mengelola Website Sendiri?",
+    "description": "<p class='mb-0'>Tentu. Setelah website selesai, Anda akan mendapatkan akses administrator sehingga dapat mengelola konten secara mandiri, seperti menambahkan artikel, mengubah informasi, mengunggah foto, memperbarui produk, maupun mengelola halaman lainnya. Kami juga memberikan panduan penggunaan agar website mudah dikelola tanpa harus memiliki kemampuan pemrograman.</p>"
+  },
+  {
+    "id": 9,
+    "title": "Apakah Paket Website Sudah Termasuk Domain dan Hosting?",
+    "description": "<p class='mb-0'>Ya, kami menyediakan paket pembuatan website yang dapat mencakup domain dan hosting. Jika Anda sudah memiliki domain atau hosting sendiri, kami juga dapat menggunakan layanan tersebut tanpa harus membeli ulang.</p>"
+  },
+  {
+    "id": 10,
+    "title": "Apakah Website yang Dibuat Sudah SEO Friendly?",
+    "description": "<p class='mb-0'>Ya. Website yang kami kembangkan menggunakan struktur yang <strong>SEO-friendly</strong>, memiliki desain responsif, performa yang optimal, mendukung sitemap, robots.txt, meta tag, serta struktur yang memudahkan mesin pencari seperti Google memahami isi website.</p>"
+  },
+  {
+    "id": 11,
+    "title": "Apakah Website Bisa Dibuka di HP dan Tablet?",
+    "description": "<p class='mb-0'>Bisa. Semua website yang kami buat menggunakan desain <strong>responsive</strong> sehingga tampil optimal pada smartphone, tablet, laptop, maupun desktop tanpa perlu aplikasi tambahan.</p>"
+  },
+  {
+    "id": 12,
+    "title": "Apakah Bisa Request Fitur Khusus?",
+    "description": "<p class='mb-0'>Bisa. Kami melayani pengembangan website custom sesuai kebutuhan, seperti sistem booking online, dashboard admin, membership, pembayaran online, integrasi API, ERP, CRM, hingga aplikasi berbasis web sesuai kebutuhan bisnis Anda.</p>"
+  },
+  {
+    "id": 13,
+    "title": "Apakah Ada Garansi Setelah Website Selesai?",
+    "description": "<p class='mb-0'>Ya. Kami memberikan garansi serta dukungan teknis sesuai dengan paket layanan yang dipilih. Tim kami siap membantu apabila terdapat kendala teknis maupun pertanyaan terkait penggunaan website setelah proses pengembangan selesai.</p>"
   }
 ]

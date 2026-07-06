@@ -1,14 +1,17 @@
-[{
+[
+  {
     "id": 1,
     "filter": "a1",
     "category": "Website",
     "title": "RealSmartLog",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-realsmart.webp",
     "banner": "/assets/images/featured-projects/realsmartlog.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-realsmart.webp"],
-    "description": "<p>Domestics - International Freight Forwarding and Global Logistics</p>",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-realsmart.webp"
+    ],
+    "description": "<p>Website company profile untuk perusahaan freight forwarding dan logistik internasional. Website dikembangkan dengan desain profesional, responsif, cepat, dan SEO-friendly untuk memperkenalkan layanan logistik serta meningkatkan kredibilitas perusahaan.</p>",
     "launch_website": "https://realsmartlog.com",
-    "service": "Perawatan"
+    "service": "Perawatan Website"
   },
   {
     "id": 2,
@@ -17,12 +20,13 @@
     "title": "Bengkel Las Putera Kembar",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-puterakembar.webp",
     "banner": "/assets/images/featured-projects/puterakembar.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-puterakembar.webp"],
-    "description": "<p>Bengkel Las Putera Kembar adalah penyedia jasa pemasangan kanopi, tralis, pintu gerbang, tangga putar, dan reling tangga profesional di Indonesia.</p>",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-puterakembar.webp"
+    ],
+    "description": "<p>Website company profile untuk Bengkel Las Putera Kembar yang melayani pembuatan kanopi, pagar, teralis, railing tangga, pintu besi, dan berbagai konstruksi besi. Website dibuat dengan desain modern, responsif, dan SEO-friendly.</p>",
     "launch_website": "https://puterakembar.com",
     "service": "Pembuatan Website"
   },
-
   {
     "id": 3,
     "filter": "a1",
@@ -30,8 +34,10 @@
     "title": "Mekanik Elektro",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-mekanik.webp",
     "banner": "/assets/images/featured-projects/mekanik-elektro.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-mekanik.webp"],
-    "description": "<p>Teknisi Listrik / Tukang Listrik Panggilan yg melayani jasa perbaikan Listrik untuk Rumah, Ruko, Kantor, &amp; Industri.</p>",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-mekanik.webp"
+    ],
+    "description": "<p>Website company profile untuk penyedia jasa teknisi listrik panggilan yang melayani rumah, ruko, kantor, dan industri. Website memudahkan pelanggan memperoleh informasi layanan dan menghubungi teknisi secara online.</p>",
     "launch_website": null,
     "service": "Pembuatan Website"
   },
@@ -42,8 +48,10 @@
     "title": "Jasa Tebang Pohon",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-tebangpohon.webp",
     "banner": "/assets/images/featured-projects/tebangpohon.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-tebangpohon.webp"],
-    "description": "Jasa tebang pohon profesional di Jabodetabek.",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-tebangpohon.webp"
+    ],
+    "description": "<p>Website company profile untuk penyedia jasa tebang pohon profesional di wilayah Jabodetabek. Website dirancang dengan tampilan responsif, informasi layanan yang lengkap, dan optimasi SEO agar mudah ditemukan di Google.</p>",
     "launch_website": null,
     "service": "Pembuatan Website"
   },
@@ -54,8 +62,10 @@
     "title": "Bengkel Las Fa'im Jaya Mandiri",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-faimjayamandiri.webp",
     "banner": "/assets/images/featured-projects/faimjayamandiri.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-faimjayamandiri.webp"],
-    "description": "<p>Bengkel Las Fa'im Jaya Mandiri adalah spesialis las terpercaya di Serang.</p>",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-faimjayamandiri.webp"
+    ],
+    "description": "<p>Website company profile untuk Bengkel Las Fa'im Jaya Mandiri yang melayani pembuatan kanopi, pagar, teralis, railing tangga, balkon, dan berbagai konstruksi besi di Serang. Website dikembangkan dengan desain profesional dan SEO-friendly.</p>",
     "launch_website": "https://faimjayamandiri.com",
     "service": "Pembuatan Website"
   },
@@ -66,8 +76,10 @@
     "title": "VandZ15",
     "fullpage": "/assets/images/featured-projects/fullpage/fullpage-vandz.webp",
     "banner": "/assets/images/featured-projects/vandz15.webp",
-    "carousel_images": ["/assets/images/featured-projects/fullpage/fullpage-vandz.webp"],
-    "description": "Jual Makanan Ringan",
+    "carousel_images": [
+      "/assets/images/featured-projects/fullpage/fullpage-vandz.webp"
+    ],
+    "description": "<p>Website katalog produk untuk bisnis makanan ringan yang memudahkan pelanggan melihat produk, informasi, dan melakukan pemesanan secara online melalui berbagai perangkat.</p>",
     "launch_website": "https://ZRDigitalTech.github.io/berkah-ramadhan",
     "service": "Pembuatan Website"
   },
@@ -81,7 +93,7 @@
     "carousel_images": [
       "https://placehold.co/2782x4382?text=www.ekijaya.com"
     ],
-    "description": "<p>Bengkel Las EKI Jaya penyedia jasa bengkel las profesional yang melayani pembuatan kanopi, pagar, teralis, railing tangga, balkon, dan berbagai konstruksi besi dengan desain modern, responsif, dan SEO friendly.</p>",
+    "description": "<p>Website company profile untuk Bengkel Las EKI Jaya yang melayani pembuatan kanopi, pagar, teralis, railing tangga, balkon, dan berbagai konstruksi besi. Website dikembangkan dengan desain modern, responsif, cepat, dan SEO-friendly untuk meningkatkan visibilitas bisnis di Google.</p>",
     "launch_website": "https://www.ekijaya.com",
     "service": "Pembuatan Website"
   },
@@ -95,7 +107,7 @@
     "carousel_images": [
       "https://placehold.co/2782x4382?text=www.bengkellasdoaibu99.com"
     ],
-    "description": "<p>Bengkel Las Doa Ibu 99 menyediakan layanan pembuatan kanopi, pagar, teralis, balkon, railing tangga, dan berbagai kebutuhan konstruksi besi dengan pengerjaan profesional dan bergaransi.</p>",
+    "description": "<p>Website company profile untuk Bengkel Las Doa Ibu 99 yang menyediakan layanan pembuatan kanopi, pagar, teralis, balkon, railing tangga, dan berbagai konstruksi besi. Website dibuat dengan tampilan profesional, responsif, dan SEO-friendly untuk mendukung promosi bisnis secara online.</p>",
     "launch_website": "https://www.bengkellasdoaibu99.com",
     "service": "Pembuatan Website"
   }

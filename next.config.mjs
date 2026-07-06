@@ -48,6 +48,31 @@ const nextConfig = {
       }
     ];
   }
+  ,
+  async headers() {
+    return [
+      // Specific: 404 pages should not be indexed
+      {
+        source: '/404.html',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' }
+        ]
+      },
+      {
+        source: '/404.shtml',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' }
+        ]
+      },
+      // Default: add X-Robots-Tag for all HTML routes to indicate indexability
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'index, follow' }
+        ]
+      }
+    ];
+  }
 };
 
 export default nextConfig;
