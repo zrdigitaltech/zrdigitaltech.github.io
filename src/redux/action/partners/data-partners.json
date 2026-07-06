@@ -1,31 +1,32 @@
-[{
+[
+  {
     "id": 1,
     "image": "/assets/images/clients/realsmartlog.png",
-    "alt": "PT Real Smart Logistics Indonesia"
+    "alt": "Logo PT Real Smart Logistics Indonesia - Website Company Profile"
   },
   {
     "id": 2,
     "image": "https://placehold.co/300x56/transparent/FFF/png?text=PuteraKembar",
-    "alt": "Bengkel Las Putera Kembar"
+    "alt": "Logo Bengkel Las Putera Kembar - Website Company Profile"
   },
   {
     "id": 3,
     "image": "/assets/images/clients/faimjayamandiri.webp",
-    "alt": "Bengkel Las Fa'im Jaya Mandiri"
+    "alt": "Logo Bengkel Las Fa'im Jaya Mandiri - Website Company Profile"
   },
   {
     "id": 4,
     "image": "/assets/images/clients/mekanik-elektro.png",
-    "alt": "Mekanik Elektro"
+    "alt": "Logo Mekanik Elektro - Website Company Profile"
   },
   {
     "id": 5,
     "image": "/assets/images/clients/vandz15.png",
-    "alt": "VandZ15"
+    "alt": "Logo VandZ15 - Website Katalog Produk"
   },
   {
     "id": 6,
     "image": "https://placehold.co/300x56/transparent/FFF/png?text=JasaTebangPohon",
-    "alt": "Jasa Tebang Pohon"
+    "alt": "Logo Jasa Tebang Pohon - Website Company Profile"
   }
 ]
