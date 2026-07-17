@@ -52,7 +52,10 @@ export const metadata = {
   openGraph: {
     url: `${process.env.SITE_URL || siteConfig.url}`,
     images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`] // ganti jika ada banner khusus
-  }
+  },
+  verification: {
+    google: 'k2M37t9tuVzPIqfQ8YS2_o-RpXnJT2D7CvIpzfnyK6A',
+  },
 };
 
 // Server-rendered defaults for canonical and robots
