@@ -94,7 +94,6 @@ const Index = (props) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <meta name="google-site-verification" content="k2M37t9tuVzPIqfQ8YS2_o-RpXnJT2D7CvIpzfnyK6A" />
       </Head>
     </Fragment>
   );
