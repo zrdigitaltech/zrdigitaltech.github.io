@@ -36,6 +36,10 @@ export const loadGoogleTagManager = () => {
   loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-59BFX4S', 'gtm'); // Replace GTM-XXXXXX with your GTM ID
 };
 
+export const loadGoogleTagManagerZRDigitalTech = () => {
+  loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-WBWG8BW9', 'gtm'); // Replace GTM-XXXXXX with your GTM ID
+};
+
 export const loadFacebookPixel = () => {
   loadScript('https://connect.facebook.net/en_US/fbevents.js', 'fb-pixel');
   // Initialize Facebook Pixel
