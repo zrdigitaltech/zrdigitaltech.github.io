@@ -34,7 +34,8 @@ import {
   loadGoogleAnalytics,
   loadGoogleTagManager,
   loadGoogleAnalyticsZRDigitalTech,
-  loadFacebookPixel
+  loadFacebookPixel,
+  loadGoogleTagManagerZRDigitalTech
   // loadTiktokPixel
 } from '@/lib/loadAnalytic';
 
@@ -64,6 +65,7 @@ const Home = (props) => {
     loadGoogleAnalytics();
     loadGoogleTagManager();
     loadFacebookPixel();
+    loadGoogleTagManagerZRDigitalTech();
     // loadTiktokPixel();
     // fetchFloatingWhatsapp();
   }, []);
@@ -79,6 +81,11 @@ const Home = (props) => {
           style="display:none;visibility:hidden"></iframe>
       </noscript>
       {/* <!-- End Google Tag Manager (noscript) --> */}
+
+      {/* <!-- Google Tag Manager ZRDigitalTech (noscript) --> */}
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBWG8BW9"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      {/* <!-- End Google Tag Manager ZRDigitalTech (noscript) --> */}
 
       <Navbar />
       <Header />
