@@ -23,7 +23,7 @@ const Index = () => {
         <div className="row align-items-center">
           <div className="col-lg-12 order-lg-2">
             <div className="text-center py-5">
-              <h2 className="mb-0">Artikel</h2>
+              <h1 className="mb-0">Artikel</h1>
               <p>
                 Temukan informasi menarik dan terbaru yang akan menginspirasi Anda! <br />
                 Jangan lewatkan kesempatan untuk memperdalam pengetahuan Anda.

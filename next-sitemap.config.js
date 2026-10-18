@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL,
+  siteUrl: process.env.SITE_URL || 'https://zrdigitaltech.com',
+  outDir: 'out',
   generateRobotsTxt: true,
   transform: async (config, path) => {
     let priority = 0.7;
@@ -23,8 +24,7 @@ module.exports = {
     return {
       loc: path,
       changefreq: 'weekly',
-      priority: priority,
-      lastmod: new Date().toISOString()
+      priority: priority
     };
   }
 };

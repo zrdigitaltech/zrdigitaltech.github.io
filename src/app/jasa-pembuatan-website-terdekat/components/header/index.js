@@ -13,7 +13,7 @@ const Index = () => {
       }}>
       <div className="container">
         <div className="banner-content">
-          <h2>Jasa Pembuatan Website Terdekat</h2>
+          <h1>Jasa Pembuatan Website Terdekat</h1>
           <p className="section-subheading">
             Jasa Pembuatan Website Terdekat yang profesional dan terpercaya. <br />
             Melayani kebutuhan website untuk UMKM, toko online, hingga perusahaan.

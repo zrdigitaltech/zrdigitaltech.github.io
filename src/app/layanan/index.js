@@ -12,13 +12,14 @@ const Index = () => {
 
   const [showScrollIcon, setShowScrollIcon] = useState(true);
   const scrollContainerRef = useRef(null);
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth <= 768);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   const fetchServicesList = async () => {
     dispatch(getListServices());
   };
 
   useEffect(() => {
+    setIsLargeScreen(window.innerWidth <= 768);
     fetchServicesList();
   }, []);
 

@@ -3,10 +3,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getListHeader } from '@/redux/action/header/creator';
+import defaultHeader from '@/redux/action/header/data-header.json';
 
 const Index = () => {
   const headerList = useSelector((state) => state.header.headerList);
   const dispatch = useDispatch();
+  const header = headerList?.title ? headerList : defaultHeader[0];
 
   const fetchHeaderList = async () => {
     dispatch(getListHeader());
@@ -45,10 +47,10 @@ const Index = () => {
 
       <div className="container">
         <div className="banner-content">
-          {headerList?.title && <h1 dangerouslySetInnerHTML={{ __html: headerList.title }}></h1>}
+          <h1 dangerouslySetInnerHTML={{ __html: header.title }}></h1>
           <div
             className="section-subheading"
-            dangerouslySetInnerHTML={{ __html: headerList.description }}></div>
+            dangerouslySetInnerHTML={{ __html: header.description }}></div>
           <a href="#portofolio" className="custom-btn btn-big grad-style-ef page-scroll">
             PORTOFOLIO KAMI
           </a>

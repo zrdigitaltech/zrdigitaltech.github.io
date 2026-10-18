@@ -1,11 +1,19 @@
 import DataLatestNews from '@/redux/action/latest-news/data-latest-news.json';
-import Page from '@/app/page';
-import Head from 'next/head';
 import { siteConfig } from '@/lib/siteConfig';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 async function fetchSlugs() {
   const slugs = DataLatestNews.map((item) => item?.slug);
   return slugs;
+}
+
+function getArticleDescription(data) {
+  return (
+    data?.meta_description?.trim() ||
+    data?.description?.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160) ||
+    ''
+  );
 }
 
 export async function generateStaticParams() {
@@ -18,17 +26,25 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const data = DataLatestNews.find((item) => item.slug === slug);
+  const siteUrl = siteConfig.url.replace(/\/$/, '');
 
   return {
     title: `${data?.title} | ZRDigitalTech`,
-    description: data?.meta_description,
+    description: getArticleDescription(data),
     openGraph: {
-      url: `${process.env.SITE_URL || siteConfig.url}/artikel/${slug}`,
-      images: `${process.env.SITE_URL || siteConfig.url}${data?.banner}`
-    }
-    ,
+      title: `${data?.title} | ZRDigitalTech`,
+      description: getArticleDescription(data),
+      url: `${siteUrl}/artikel/${slug}/`,
+      images: data?.banner ? [`${siteUrl}${data.banner}`] : []
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${data?.title} | ZRDigitalTech`,
+      description: getArticleDescription(data),
+      images: data?.banner ? [`${siteUrl}${data.banner}`] : []
+    },
     // Add server-rendered canonical and robots metadata
-    alternates: { canonical: `${process.env.SITE_URL || siteConfig.url}/artikel/${slug}` },
+    alternates: { canonical: `/artikel/${slug}/` },
     robots: { index: true, follow: true }
   };
 }
@@ -39,7 +55,7 @@ const LatestNews = ({ params }) => {
   const data = DataLatestNews.find((item) => item.slug === slug) || {};
 
   const base = process.env.SITE_URL || siteConfig.url || '';
-  const articleUrl = `${base.replace(/\/$/, '')}/artikel/${slug}`;
+  const articleUrl = `${base.replace(/\/$/, '')}/artikel/${slug}/`;
 
   function parseDateToISO(dateStr) {
     if (!dateStr) return undefined;
@@ -86,7 +102,7 @@ const LatestNews = ({ params }) => {
     headline: data.title || '',
     image: data.image ? [`${base.replace(/\/$/, '')}${data.image}`] : [],
     datePublished: datePublishedISO,
-    description: data.meta_description || data.description?.replace(/<[^>]+>/g, '').slice(0, 200) || '',
+    description: getArticleDescription(data),
     author: {
       '@type': 'Person',
       name: data.author || 'ZRDigitalTech'
@@ -103,14 +119,21 @@ const LatestNews = ({ params }) => {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={articleUrl} />
-      </Head>
-      <Page slug={slug} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
+      <Navbar page="artikel" />
+      <main className="latest-news section-padding">
+        <div className="container">
+          <article>
+            <header className="mb-4">
+              <p>{data.date}</p>
+              <h1>{data.title}</h1>
+            </header>
+            {data.image && <img src={data.image} alt={data.title} className="img-fluid mb-4" />}
+            <div dangerouslySetInnerHTML={{ __html: data.description || '' }} />
+          </article>
+        </div>
+      </main>
+      <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
     </>
   );
 };

@@ -12,13 +12,14 @@ const Index = (props) => {
 
   const [showScrollIcon, setShowScrollIcon] = useState(true);
   const scrollContainerRef = useRef(null);
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth <= 768);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   const fetchPricingList = async () => {
     dispatch(getListPricing());
   };
 
   useEffect(() => {
+    setIsLargeScreen(window.innerWidth <= 768);
     fetchPricingList();
   }, []);
 

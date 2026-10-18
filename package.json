@@ -11,7 +11,7 @@
     "lint:cache": "eslint ./ --ext ts,js,tsx,jsx --cache --fix",
     "format": "prettier --write './**/*.{js,scss,css, md,json}' --config ./.prettierrc",
     "host": "next dev -H 192.168.1.18",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && node scripts/generate-static-redirects.js",
     "purgecss": "purgecss --css .next/static/css/*.css --content './src/app/**/*.{js,jsx,ts,tsx}' './src/components/**/*.{js,jsx,ts,tsx}' --output .next/static/css/"
   },
   "dependencies": {

@@ -1,6 +1,8 @@
 'use client';
 
 import React, { Fragment, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { cityGroups, formatKota } from '@/app/jasa-pembuatan-website/areas';
 
 // Components
 import Navbar from '@/components/navbar';
@@ -28,6 +30,33 @@ import { loadJquery } from '@/lib/loadAnalytic';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const ServiceAreaDirectory = () => (
+  <section className="section-padding" aria-labelledby="service-area-title">
+    <div className="container">
+      <h2 id="service-area-title">Area layanan pembuatan website</h2>
+      <p>
+        Kantor utama ZRDigitalTech berada di Tangerang. Kami melayani proyek website untuk bisnis
+        di berbagai wilayah berikut; daftar ini menunjukkan cakupan layanan, bukan alamat kantor
+        cabang.
+      </p>
+      <div className="row">
+        {cityGroups.map(({ region, cities }) => (
+          <div className="col-md-4 mb-4" key={region}>
+            <h3>{region}</h3>
+            <ul>
+              {cities.map((city) => (
+                <li key={city}>
+                  <Link href={`/jasa-pembuatan-website/${city}/`}>{formatKota(city)}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const Index = (props) => {
   const { slug } = props;
 
@@ -47,6 +76,7 @@ const Index = (props) => {
       <Navbar page="artikel" />
       <Header />
       <Aboutus />
+      <ServiceAreaDirectory />
       <FeaturedProjects handlePesanSekarang={(e, products) => handlePesanSekarang(e, products)} />
       <CaseStudy handlePesanSekarang={(e, products) => handlePesanSekarang(e, products)} />
       {/* <Team /> */}

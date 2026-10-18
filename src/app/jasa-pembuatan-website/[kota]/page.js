@@ -1,27 +1,29 @@
 import KotaPage from '@/app/[slug]/index';
 import { siteConfig } from '@/lib/siteConfig';
-
-function formatKota(slug) {
-  return slug
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
+import { citySlugs, formatKota } from '@/app/jasa-pembuatan-website/areas';
 
 export async function generateMetadata({ params }) {
   const { kota } = params;
   const kotaDisplay = formatKota(kota);
-  const title = `Jasa Pembuatan Website ${kotaDisplay} | Profesional & SEO Friendly`;
-  const description =
-    `ZRDigitalTech menyediakan jasa pembuatan website profesional di ${kotaDisplay} untuk UMKM, perusahaan, instansi, sekolah, toko online, landing page, dan website custom. Desain modern, responsif, SEO-friendly, konsultasi gratis, dan harga mulai Rp 1,5 juta.`;
-  const url = `${process.env.SITE_URL || siteConfig.url}/jasa-pembuatan-website/${kota}`;
+  const siteUrl = siteConfig.url.replace(/\/$/, '');
+  const title = `Jasa Pembuatan Website ${kotaDisplay} | ZRDigitalTech`;
+  const description = `Layanan website untuk bisnis di ${kotaDisplay}: company profile, toko online, landing page, dan website custom. Konsultasi kebutuhan bersama ZRDigitalTech.`;
+  const url = `${siteUrl}/jasa-pembuatan-website/${kota}/`;
 
   return {
     title,
     description,
     openGraph: {
+      title,
+      description,
       url,
-      images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`]
+      images: [`${siteUrl}/assets/images/meta-zrdigitaltech.webp`]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}/assets/images/meta-zrdigitaltech.webp`]
     },
     alternates: {
       canonical: url
@@ -33,9 +35,31 @@ export async function generateMetadata({ params }) {
 export default function Page({ params }) {
   const { kota } = params;
   const kotaDisplay = formatKota(kota);
-  const canonical = `${process.env.SITE_URL}/jasa-pembuatan-website/${kota}`;
+  const siteUrl = siteConfig.url.replace(/\/$/, '');
+  const canonical = `${siteUrl}/jasa-pembuatan-website/${kota}/`;
+  const localFaqs = [
+    {
+      question: `Apakah ZRDigitalTech melayani pembuatan website di ${kotaDisplay}?`,
+      answer: `Ya. ZRDigitalTech melayani proyek website untuk bisnis di ${kotaDisplay}. Alamat kantor utama kami berada di ${siteConfig.address.addressLocality}; halaman ini menjelaskan area layanan, bukan klaim kantor cabang di ${kotaDisplay}.`
+    },
+    {
+      question: 'Jenis website apa yang dapat dibuat?',
+      answer:
+        'Layanan mencakup website company profile, toko online, landing page, website sekolah atau instansi, dan website custom sesuai kebutuhan proyek.'
+    },
+    {
+      question: 'Bagaimana tahapan pembuatan website?',
+      answer:
+        'Proyek dimulai dengan konsultasi kebutuhan, dilanjutkan penentuan ruang lingkup, perencanaan, desain dan pengembangan, lalu peninjauan sebelum website diserahkan.'
+    },
+    {
+      question: 'Apa yang perlu disiapkan sebelum konsultasi?',
+      answer:
+        'Siapkan tujuan website, profil usaha, informasi produk atau layanan, target pelanggan, serta fitur dan referensi desain yang dibutuhkan. Rincian biaya ditentukan berdasarkan ruang lingkup proyek.'
+    }
+  ];
 
-  // JSON-LD for Breadcrumb + LocalBusiness
+  // Describe a service area without implying a physical branch in every city.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -46,13 +70,13 @@ export default function Page({ params }) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: process.env.SITE_URL
+            item: `${siteUrl}/`
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'Jasa Pembuatan Website',
-            item: `${process.env.SITE_URL}/jasa-pembuatan-website`
+            name: 'Jasa Pembuatan Website Terdekat',
+            item: `${siteUrl}/jasa-pembuatan-website-terdekat/`
           },
           {
             '@type': 'ListItem',
@@ -63,133 +87,33 @@ export default function Page({ params }) {
         ]
       },
       {
-        '@type': 'LocalBusiness',
-        name: siteConfig.name,
-        url: siteConfig.url,
-        telephone: siteConfig.telephone,
-        email: siteConfig.email,
-        sameAs: siteConfig.sameAs,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: siteConfig.address.streetAddress,
-          addressLocality: kotaDisplay,
-          addressRegion: siteConfig.address.addressRegion,
-          postalCode: siteConfig.address.postalCode,
-          addressCountry: siteConfig.address.addressCountry
-        },
-        logo: siteConfig.logo,
-        openingHours: siteConfig.openingHours
+        '@type': 'Service',
+        '@id': `${canonical}#service`,
+        name: `Jasa Pembuatan Website ${kotaDisplay}`,
+        serviceType: 'Pembuatan website',
+        provider: { '@id': `${siteUrl}/#organization` },
+        areaServed: { '@type': 'AdministrativeArea', name: kotaDisplay },
+        url: canonical
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: localFaqs.map(({ question, answer }) => ({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: { '@type': 'Answer', text: answer }
+        }))
       }
     ]
   };
 
   return (
     <>
-      <KotaPage kota={kotaDisplay} />
+      <KotaPage kota={kotaDisplay} localFaqs={localFaqs} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );
 }
 
-export async function generateStaticParams() {
-  const cities = [
-    // Sekitar Tangerang
-    'ciledug',
-    'cipondoh',
-    'cikupa',
-    'bsd',
-    'serpong',
-    'bintaro',
-    'karawaci',
-    'cikokol',
-    'alam-sutera',
-    'gading-serpong',
-
-    // Sekitar Tangsel
-    'pamulang',
-    'ciputat',
-    'ciputat-timur',
-    'pondok-aren',
-    'serpong-utara',
-    'setu',
-    'jombang',
-    'pondok-cabe',
-
-    // Jabodetabek utama
-    'jakarta',
-    'jakarta-pusat',
-    'jakarta-utara',
-    'jakarta-selatan',
-    'jakarta-barat',
-    'jakarta-timur',
-    'bogor',
-    'depok',
-    'tangerang',
-    'tangerang-selatan',
-    'bekasi',
-    'kabupaten-bekasi',
-    'kabupaten-bogor',
-    'kabupaten-tangerang',
-
-    // Jawa Barat
-    'bandung',
-    'cimahi',
-    'cirebon',
-    'garut',
-    'tasikmalaya',
-    'sukabumi',
-
-    // Jawa Tengah
-    'semarang',
-    'solo',
-    'surakarta',
-    'magelang',
-    'purwokerto',
-    'pekalongan',
-    'kudus',
-
-    // Jawa Timur
-    'surabaya',
-    'malang',
-    'kediri',
-    'madiun',
-    'sidoarjo',
-    'pasuruan',
-    'probolinggo',
-    'blitar',
-
-    // Yogyakarta
-    'yogyakarta',
-
-    // Sumatera
-    'medan',
-    'padang',
-    'palembang',
-    'pekanbaru',
-    'jambi',
-    'banda-aceh',
-    'batam',
-
-    // Kalimantan
-    'balikpapan',
-    'samarinda',
-    'banjarmasin',
-    'pontianak',
-
-    // Sulawesi
-    'makassar',
-    'manado',
-    'kendari',
-    'gorontalo',
-
-    // Bali & NTB
-    'denpasar',
-    'mataram',
-
-    // Papua & Maluku
-    'jayapura',
-    'ambon'
-  ];
-
-  return cities.map((city) => ({ kota: city }));
+export function generateStaticParams() {
+  return citySlugs.map((kota) => ({ kota }));
 }
