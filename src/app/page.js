@@ -78,13 +78,13 @@ const Home = (props) => {
           src="https://www.googletagmanager.com/ns.html?id=GTM-59BFX4S"
           height="0"
           width="0"
-          style="display:none;visibility:hidden"></iframe>
+          style={{ display: 'none', visibility: 'hidden' }}></iframe>
       </noscript>
       {/* <!-- End Google Tag Manager (noscript) --> */}
 
       {/* <!-- Google Tag Manager ZRDigitalTech (noscript) --> */}
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBWG8BW9"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
       {/* <!-- End Google Tag Manager ZRDigitalTech (noscript) --> */}
 
       <Navbar />

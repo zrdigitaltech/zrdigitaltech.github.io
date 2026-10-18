@@ -30,7 +30,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Index = (props) => {
-  const { slug, kota } = props;
+  const { slug, kota, localFaqs = [] } = props;
 
   const [dataProducts, setDataProducts] = useState({});
 
@@ -49,6 +49,39 @@ const Index = (props) => {
       <Header kota={kota} handlePesanSekarang={(e, products) => handlePesanSekarang(e, products)} />
       <Services />
       <Aboutus kota={kota} />
+      <section className="section-padding" aria-labelledby="location-services-title">
+        <div className="container">
+          <h2 id="location-services-title">Layanan website untuk bisnis di {kota}</h2>
+          <p>
+            ZRDigitalTech melayani kebutuhan website untuk usaha dan organisasi di {kota}. Alamat
+            kantor utama tercantum di Tangerang; halaman ini menjelaskan jangkauan layanan, bukan
+            keberadaan kantor cabang di setiap kota.
+          </p>
+          <h3>Pilih website sesuai tujuan bisnis</h3>
+          <p>
+            Website company profile membantu menjelaskan usaha dan layanan. Toko online menyajikan
+            katalog produk, sementara landing page memusatkan informasi pada satu penawaran. Untuk
+            kebutuhan berbeda, ruang lingkup website custom dibahas saat konsultasi.
+          </p>
+          <h3>Tahapan pengerjaan</h3>
+          <ol>
+            <li>Konsultasi tujuan, pelanggan, isi, dan fitur yang dibutuhkan.</li>
+            <li>Penentuan ruang lingkup, jadwal, serta estimasi biaya sebelum pengerjaan.</li>
+            <li>Desain dan pengembangan website, dilanjutkan peninjauan hasil.</li>
+            <li>Perbaikan sesuai ruang lingkup dan serah terima website.</li>
+          </ol>
+          <h3>Pertanyaan tentang layanan di {kota}</h3>
+          {localFaqs.map(({ question, answer }) => (
+            <div key={question}>
+              <h4>{question}</h4>
+              <p>{answer}</p>
+            </div>
+          ))}
+          <a href="/kontak-kami/" className="custom-btn btn-big grad-style-ef">
+            Konsultasi kebutuhan website
+          </a>
+        </div>
+      </section>
       <FeaturedProjects handlePesanSekarang={(e, products) => handlePesanSekarang(e, products)} />
       <CaseStudy handlePesanSekarang={(e, products) => handlePesanSekarang(e, products)} />
       {/* <Team /> */}

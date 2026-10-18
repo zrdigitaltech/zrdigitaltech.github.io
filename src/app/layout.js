@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic';
-
 // css
 import '@/assets/styles/styles.scss';
 
@@ -15,17 +13,12 @@ import '@/assets/styles/styles.scss';
 
 // layout.js
 // Components
-import Heads from '@/components/head';
 import { siteConfig } from '@/lib/siteConfig';
 import Scripts from '@/components/scripts';
-import Loading from '@/components/loading';
-const ReduxProvider = dynamic(() => import('@/redux/provider'), {
-  ssr: false,
-  loading: () => <Loading title={metadata.title} />
-});
+import ReduxProvider from '@/redux/provider';
 
 export const metadata = {
-  // Basic metas
+  metadataBase: new URL(siteConfig.url),
   authors: [{ name: 'ZRDigitalTech' }],
   keywords: [
     'Jasa Pembuatan Website',
@@ -44,25 +37,33 @@ export const metadata = {
     'Zikri Ramdani'
   ],
   manifest: '/manifest.json',
-  author: 'ZRDigitalTech',
-  // Page Title
+  applicationName: siteConfig.name,
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   title: 'Jasa Pembuatan Website Profesional | ZRDigitalTech',
+  alternates: { canonical: '/' },
   description:
     'ZRDigitalTech menyediakan jasa pembuatan website profesional untuk perusahaan, UMKM, sekolah, instansi, toko online, landing page, dan website custom. Desain modern, responsif, SEO-friendly, serta didukung layanan maintenance dan konsultasi gratis.',
   openGraph: {
-    url: `${process.env.SITE_URL || siteConfig.url}`,
-    images: [`${process.env.SITE_URL || siteConfig.url}/assets/images/meta-zrdigitaltech.webp`] // ganti jika ada banner khusus
+    type: 'website',
+    locale: 'id_ID',
+    siteName: siteConfig.name,
+    url: siteConfig.url,
+    title: 'Jasa Pembuatan Website Profesional | ZRDigitalTech',
+    description:
+      'Jasa pembuatan website untuk bisnis, UMKM, sekolah, dan instansi. Desain responsif, SEO-friendly, serta konsultasi gratis.',
+    images: ['/assets/images/meta-zrdigitaltech.webp']
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jasa Pembuatan Website Profesional | ZRDigitalTech',
+    description:
+      'Jasa pembuatan website untuk bisnis, UMKM, sekolah, dan instansi. Desain responsif, SEO-friendly, serta konsultasi gratis.',
+    images: ['/assets/images/meta-zrdigitaltech.webp']
   },
   verification: {
     google: 'k2M37t9tuVzPIqfQ8YS2_o-RpXnJT2D7CvIpzfnyK6A',
-  },
-};
-
-// Server-rendered defaults for canonical and robots
-metadata.alternates = { canonical: `${process.env.SITE_URL || siteConfig.url}` };
-metadata.robots = {
-  index: true,
-  follow: true
+  }
 };
 
 export const viewport = {
@@ -70,19 +71,37 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${siteConfig.url}/#organization`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        logo: `${siteConfig.url}${siteConfig.logo}`,
+        telephone: siteConfig.telephone,
+        email: siteConfig.email,
+        sameAs: siteConfig.sameAs
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        name: siteConfig.name,
+        url: siteConfig.url,
+        publisher: { '@id': `${siteConfig.url}/#organization` },
+        inLanguage: 'id-ID'
+      }
+    ]
+  };
+
   return (
     <html lang="id">
-      <Heads
-        title={metadata.title}
-        description={metadata.description}
-        author={metadata.author}
-        keywords={metadata.keywords}
-        themeColor={viewport.themeColor}
-        manifest={metadata.manifest}
-        url={metadata.openGraph.url}
-        image={metadata.openGraph.images}
-      />
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <ReduxProvider>
           {children}
           <Scripts />

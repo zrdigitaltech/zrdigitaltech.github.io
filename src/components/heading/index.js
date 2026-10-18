@@ -13,9 +13,9 @@ const Index = ({ title }) => {
             backgroundImage: 'linear-gradient(45deg, #e9a17b, #ff7cb0)'
           }}>
           <div className="container ">
-            <div className="mb-0 font-weight-bold" style={{ fontSize: '3rem' }}>
+            <h1 className="mb-0 font-weight-bold" style={{ fontSize: '3rem' }}>
               {title}
-            </div>
+            </h1>
           </div>
         </div>
       </div>
